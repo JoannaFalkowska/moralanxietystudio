@@ -1,0 +1,112 @@
+h2 
+  font-weight: 400
+strong::after, strong::before
+  content: none
+
+.features-section
+  background: $iceberg
+  .features-header-row
+    margin-bottom: 0    
+  .feature-row:last-of-type
+    img
+      transform: scaleX(-1)
+
+  // characted info space
+  .feature-row
+    padding: 20px 0 30px
+    cursor: pointer    
+  .feature-header
+    text-decoration: underline
+  .feature-additional-info
+    max-height: 0
+    overflow: hidden
+    transition: all 0.6s ease-in-out
+    p + p 
+      margin-top: 20px
+  .feature-row.open
+    transition: background-color 0.8s ease-in-out
+    .feature-additional-info
+      border-top: 2px solid $body-color
+      margin-top: 20px
+      padding-top: 20px
+      max-height: 2000px
+    &.vena
+      background-color: lighten($vena-background-color, 15%)
+    &.fabel
+      background-color: lighten($fabel-background-color, 15%)
+    &.iudicia
+      background-color: lighten($iudicia-background-color, 15%)
+  .feature-row:hover:not(.open)
+    &.vena
+      background-color: lighten($vena-background-color, 20%)
+    &.fabel
+      background-color: lighten($fabel-background-color, 20%)
+    &.iudicia
+      background-color: lighten($iudicia-background-color, 20%)
+  .feature-row.open + .feature-row
+    margin-bottom: 10px
+    
+
+  @media (min-width: $breakpoint-mobile + 1)
+    img 
+      width: 100%
+    .feature-row
+      margin-right: -20px
+  @media (max-width: $breakpoint-mobile)
+    .image-col 
+      text-align: center
+    img
+      display: inline-block
+      width: 80%
+    .feature-row 
+      margin-right: -15px
+      padding-right: 15px
+      
+
+.introduction-section
+  .logo-col
+    text-align: center
+  .logo
+    display: inline-block
+    width: 50%
+    margin: 0 0 50px
+  .introduction-image.main
+    margin: 30px 0
+  .introduction-image
+    box-shadow: 0px 0px 20px 3px rgba(black, 1)
+  .introduction-gallery
+    margin: 60px 0 30px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    .introduction-image
+      display: block
+      width: 30%
+    img
+      margin: 0
+
+  @media (min-width: $breakpoint-mobile + 1px)
+    .introduction-gallery .introduction-image
+      width: 30%
+  @media (max-width: $breakpoint-mobile)
+    .logo
+      width: 100%
+    .introduction-gallery
+      flex-wrap: wrap
+      .introduction-image
+        width: 100%
+      .introduction-image + .introduction-image
+        margin-top: 20%
+        
+
+
+.faq-section  
+  background: $hawkes
+  font-size: 1rem
+  h2 
+    margin-bottom: 0
+  .faq-question-wrapper
+    margin-top: 40px
+
+.social-section, footer
+  background: $foam

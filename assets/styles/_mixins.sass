@@ -1,0 +1,40 @@
+=pseudoelement
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+=square($size)
+  width: $size
+  height: $size
+=circle($size)
+  width: $size
+  height: $size
+  border-radius: 50%
+=background-icon($icon: null)
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  @if $icon
+    background-image: url('/assets/images/#{$icon}')
+=background-image($image: null)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  @if $image
+    background-image: url('/assets/images/#{$image}')
+=center-x ($position: null)
+  position: $position
+  left: 50%
+  transform: translateX(-50%)
+=center-y ($position: null)
+  position: $position
+  top: 50%
+  transform: translateY(-50%)
+=center-xy ($position: null)
+  position: $position
+  left: 50%
+  top: 50%
+  transform: translateX(-50%) translateY(-50%)
+=box-shadow
+  box-shadow: 0 5px 30px rgba($black, 0.2)
+  

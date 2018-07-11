@@ -1,0 +1,135 @@
+html, body
+  background-color: $body-background
+body
+  padding-top: $header-height
+h2, h3
+  margin-bottom: 20px
+p + p
+  margin-top: 7px
+img
+  max-width: 100%
+section
+  padding: 70px 0
+
+.text-col
+  display: flex
+  align-content: center
+  flex-wrap: wrap
+
+
+.landing-background
+  +background-icon('backgroundwebsite2.png')
+  padding: 0
+  position: relative
+  background-position-y: 0
+  height: 56.25vw
+  img
+    position: absolute
+    z-index: 1
+    width: 25vw
+    right: 5vw
+    top: 35vw
+  // &::after
+  //   +pseudoelement
+  //   background: linear-gradient(transparent, black)
+  //   top: 65%
+  //   height: 35%
+  //   width: 100%
+
+// .landing-wrapper
+//   position: relative
+//   z-index: 1
+//   top: -5vw
+
+.warning
+  margin-top: 30px
+
+.buy-section
+  margin-bottom: -70px
+  .buy-button
+    position: relative
+    padding: 10px 30px;
+    width: 100%;
+  .buy-button + .buy-button
+    margin-left: 70px
+  .buy-button-content
+    display: block
+    position: relative
+    width: 100%
+    padding-top: 80%
+    .buy-button-icon, p
+      position: absolute
+    .buy-button-icon
+      max-width: 100%
+      left: 50%
+      top: 40%
+      transform: translateY(-50%) translateX(-50%)
+    p
+      width: 100%
+      top: 65%
+      left: 0
+      text-align: center
+
+
+.introduction-section
+  img 
+    margin-top: 30px
+
+.features-section
+  // background-color: #0e0e15
+  // background-color: #040519
+  // background-color: #101918
+  // background-color: #121521
+  background: linear-gradient(black 0%, #121521 3%, #121521 97%, black 100%)
+  margin: -50px 0
+  padding: 100px 0
+  .features-header-row
+    text-align: center
+    margin-bottom: 40px
+  .text-col
+    padding: 20px 0
+  .feature-header
+    width: 100%
+  .feature-row + .feature-row
+    margin-top: 60px
+
+  @media (min-width: $breakpoint-mobile + 1)
+    .text-col
+      text-align: right
+    .image-col + .text-col
+      text-align: left
+
+  @media (max-width: $breakpoint-mobile)
+    .feature-row + .feature-row
+      margin-top: 60px
+    .feature-header
+      width: 100%
+      text-align: center
+    .image-col
+      order: 2
+
+
+.download-section
+  display: block
+  width: 100%
+  margin: -35px 0
+  text-align: center
+
+
+.faq-section
+  font-size: (18rem/20)
+.faq-question-wrapper + .faq-question-wrapper
+  margin-top: 30px
+.faq-question
+  // font-weight: 600
+  font-style: italic
+
+.social-section
+  h4
+    margin-bottom: 10px
+  .social-link + .social-link
+    margin-top: 30px
+
+  @media (min-width: $breakpoint-mobile + 1px)
+    h2
+      text-align: left

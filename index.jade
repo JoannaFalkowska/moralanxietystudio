@@ -1,0 +1,320 @@
+html(lang='en')
+  head
+    meta(charset='utf-8')
+
+    title Tales From Windy Meadow | Moral Anxiety Studio
+    meta(name='description' content='Windy Meadow is is a slice-of-life story about choosing your path and living in a community.')
+    meta(name='keywords' content='Tales From Windy Meadow, Tales From Windy Meadow game, Moral Anxiety Studio, visual novel, narrative game, interactive game')
+
+    //- og-properties
+    meta(property='og:url' content='http://www.moralanxietystudio.com')
+    meta(property='og:type' content='website')
+    meta(property='og:title' content='Tales From Windy Meadow | Moral Anxiety Studio')
+    meta(property='og:description' content='Tales From Windy Meadow is is a slice-of-life story about choosing your path and living in a community.')
+    meta(property='og:image' content='http://www.moralanxietystudio.com/assets/images/windy-meadow/domesticated-forest.png')
+    //- end of og-properties
+
+    //- favicons
+    link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
+    link(rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png")
+    link(rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png")
+    link(rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png")
+    link(rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png")
+    link(rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png")
+    link(rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png")
+    link(rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png")
+    link(rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png")
+    link(rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png")
+    link(rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png")
+    link(rel="manifest" href="manifest.json")
+    meta(name="msapplication-TileColor" content="#FCE08E")
+    meta(name="msapplication-TileImage" content="ms-icon-144x144.png")
+    meta(name="theme-color" content="#FCE08E")
+    //- end of favicons
+
+    //- css, js
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/assets/styles/windy-meadow.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya+Sans+SC')
+
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js' crossorigin='anonymous')
+    script(src='https://apis.google.com/js/platform.js')
+    script(src='/assets/scripts/application.js')
+    //- script(src='/assets/scripts/vendor/vendor.js') - not used currently
+    //- end of css and js
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-100079168-1', 'auto');
+      ga('send', 'pageview');
+
+
+  body
+    //- Facebook SDK
+    #fb-root
+    script.
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = '//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.9&appId=157378907777296';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    //- Youtube SDK
+    script.
+      function onYtEvent(payload) {
+      if (payload.eventType == 'subscribe') {
+        ga("send", "social", "YouTube", "subscribe");
+      } else if (payload.eventType == 'unsubscribe') {
+        ga("send", "social", "YouTube", "unsubscribe");
+      }
+      }
+
+
+    header.header-main
+      nav.social-links
+        a.social-link.facebook(href='https://www.facebook.com/MoralAnxiety/', onclick='ga("send", "social", "Facebook", "click");')
+          span Facebook
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 310 310')
+            path(d='M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064\
+              c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996\
+              V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545\
+              C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703\
+              c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z')
+        a.social-link.twitter(href='https://twitter.com/MoralAnxiety', onclick='ga("send", "social", "Twitter", "click");')
+          span Twitter
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 310 310')
+            path(d='M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73\
+            c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783\
+            c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598\
+            C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467\
+            c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977\
+            c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889\
+            c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597\
+            c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961\
+            c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895\
+            c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367\
+            c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998\
+            C307.394,57.037,305.009,56.486,302.973,57.388z')
+
+        a.social-link.youtube(href='https://www.youtube.com/channel/UCqORtPfGLasjXPUJwch5IDA', onclick='ga("send", "social", "YouTube", "click");')
+          span YouTube
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='90.677px', height='90.677px', viewbox='0 0 90.677 90.677')
+            path(d='M82.287,45.907c-0.937-4.071-4.267-7.074-8.275-7.521c-9.489-1.06-19.098-1.065-28.66-1.06\
+            c-9.566-0.005-19.173,0-28.665,1.06c-4.006,0.448-7.334,3.451-8.27,7.521c-1.334,5.797-1.35,12.125-1.35,18.094\
+            c0,5.969,0,12.296,1.334,18.093c0.936,4.07,4.264,7.073,8.272,7.521c9.49,1.061,19.097,1.065,28.662,1.061\
+            c9.566,0.005,19.171,0,28.664-1.061c4.006-0.448,7.336-3.451,8.272-7.521c1.333-5.797,1.34-12.124,1.34-18.093\
+            C83.61,58.031,83.62,51.704,82.287,45.907z M28.9,50.4h-5.54v29.438h-5.146V50.4h-5.439v-4.822H28.9V50.4z M42.877,79.839h-4.629\
+            v-2.785c-1.839,2.108-3.585,3.136-5.286,3.136c-1.491,0-2.517-0.604-2.98-1.897c-0.252-0.772-0.408-1.994-0.408-3.796V54.311\
+            h4.625v18.795c0,1.084,0,1.647,0.042,1.799c0.111,0.718,0.462,1.082,1.082,1.082c0.928,0,1.898-0.715,2.924-2.166v-19.51h4.629\
+            L42.877,79.839L42.877,79.839z M60.45,72.177c0,2.361-0.159,4.062-0.468,5.144c-0.618,1.899-1.855,2.869-3.695,2.869\
+            c-1.646,0-3.234-0.914-4.781-2.824v2.474h-4.625V45.578h4.625v11.189c1.494-1.839,3.08-2.769,4.781-2.769\
+            c1.84,0,3.078,0.969,3.695,2.88c0.311,1.027,0.468,2.715,0.468,5.132V72.177z M77.907,67.918h-9.251v4.525\
+            c0,2.363,0.773,3.543,2.363,3.543c1.139,0,1.802-0.619,2.066-1.855c0.043-0.251,0.104-1.279,0.104-3.134h4.719v0.675\
+            c0,1.491-0.057,2.518-0.099,2.98c-0.155,1.024-0.519,1.953-1.08,2.771c-1.281,1.854-3.179,2.768-5.595,2.768\
+            c-2.42,0-4.262-0.871-5.599-2.614c-0.981-1.278-1.485-3.29-1.485-6.003v-8.941c0-2.729,0.447-4.725,1.43-6.015\
+            c1.336-1.747,3.177-2.617,5.54-2.617c2.321,0,4.161,0.87,5.457,2.617c0.969,1.29,1.432,3.286,1.432,6.015v5.285H77.907z')
+            path(d='M70.978,58.163c-1.546,0-2.321,1.181-2.321,3.541v2.362h4.625v-2.362C73.281,59.344,72.508,58.163,70.978,58.163z')
+            path(d='M53.812,58.163c-0.762,0-1.534,0.36-2.307,1.125v15.559c0.772,0.774,1.545,1.14,2.307,1.14\
+            c1.334,0,2.012-1.14,2.012-3.445V61.646C55.824,59.344,55.146,58.163,53.812,58.163z')
+            path(d='M56.396,34.973c1.705,0,3.479-1.036,5.34-3.168v2.814h4.675V8.82h-4.675v19.718c-1.036,1.464-2.018,2.188-2.953,2.188\
+            c-0.626,0-0.994-0.37-1.096-1.095c-0.057-0.153-0.057-0.722-0.057-1.817V8.82h-4.66v20.4c0,1.822,0.156,3.055,0.414,3.836\
+            C53.854,34.363,54.891,34.973,56.396,34.973z')
+            path(d='M23.851,20.598v14.021h5.184V20.598L35.271,0h-5.242l-3.537,13.595L22.812,0h-5.455c1.093,3.209,2.23,6.434,3.323,9.646\
+            C22.343,14.474,23.381,18.114,23.851,20.598z')
+            path(d='M42.219,34.973c2.342,0,4.162-0.881,5.453-2.641c0.981-1.291,1.451-3.325,1.451-6.067v-9.034\
+            c0-2.758-0.469-4.774-1.451-6.077c-1.291-1.765-3.11-2.646-5.453-2.646c-2.33,0-4.149,0.881-5.443,2.646\
+            c-0.993,1.303-1.463,3.319-1.463,6.077v9.034c0,2.742,0.47,4.776,1.463,6.067C38.069,34.092,39.889,34.973,42.219,34.973z\
+            M39.988,16.294c0-2.387,0.724-3.577,2.231-3.577c1.507,0,2.229,1.189,2.229,3.577v10.852c0,2.387-0.722,3.581-2.229,3.581\
+            c-1.507,0-2.231-1.194-2.231-3.581V16.294z')
+
+        a.social-link.email(href='mailto:moralanxietystudio@gmail.com')
+          span Contact Us
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 485.411 485.411')
+            path(d='M0,81.824v321.763h485.411V81.824H0z M242.708,280.526L43.612,105.691h398.187L242.708,280.526z\
+            M163.397,242.649L23.867,365.178V120.119L163.397,242.649z M181.482,258.533l61.22,53.762l61.22-53.762L441.924,379.72H43.487\
+            L181.482,258.533z M322.008,242.655l139.535-122.536v245.059L322.008,242.655z')
+
+      nav.page-links
+        a.page-link.active(href='/') Tales From Windy Meadow
+        a.page-link(href='/tavern') The Tavern
+
+    section#story.introduction-section
+      .grid
+        .row
+          .col.logo-col
+            img.logo(src='assets/images/windy-meadow/windy-meadow-logo-animated.gif')
+            h2 Fantasy pixel-art visual novel
+        .row
+          .col.col-desktop-10.col-desktop-offset-1
+            p
+              strong &#32;Tales From Windy Meadow&#32;
+              | is a slice-of-life story about
+              strong &#32;choosing your path and living in a community.
+   
+        .row
+          .col.col-desktop-10.col-desktop-offset-1
+            img.introduction-image.main(src='assets/images/windy-meadow/rainy.gif' alt='Tales From Windy Meadow rainy gif')
+        
+        .row
+          .col.col-desktop-10.col-desktop-offset-1
+            p Long ago people weren’t as different from us as we tend to think they were.
+            p In a small village known as Windy Meadow three young people need to decide what are they going to do with their future. Much sooner than they hoped for.
+
+        .row
+          .col.col-desktop-10.col-desktop-offset-1
+            .introduction-gallery
+              a.introduction-image(href='assets/images/windy-meadow/screenshots/boatbig.png' target = "_blank")
+                img(src='assets/images/windy-meadow/screenshots/boatsmall.png' alt='Tales From Windy Meadow boat')
+              a.introduction-image(href='assets/images/windy-meadow/screenshots/hutbig.png' target = "_blank")
+                img(src='assets/images/windy-meadow/screenshots/hutsmall.png' alt='Tales From Windy Meadow hut')          
+              a.introduction-image(href='assets/images/windy-meadow/screenshots/shelterbig.png' target = "_blank")
+                img(src='assets/images/windy-meadow/screenshots/sheltersmall.png' alt='Tales From Windy Meadow shelter')
+          
+
+    section#characters.features-section
+      .grid
+        .row.features-header-row
+          .col
+            h2 Cast
+          //- .col.col-tablet-8.col-tablet-offset-2.col-desktop-8.col-desktop-offset-2
+          //-   h5
+
+        .row.feature-row.vena
+          .col.col-4.col-desktop-offset-1.col-mobile-12.image-col
+            img(src='/assets/images/windy-meadow/VenaFace.png')
+          .col.col-6.col-tablet-8.col-mobile-12.text-col
+            h3.feature-header Vena
+            p
+              | Will
+              strong &#32;Vena
+              |, the best huntress in the village, stay with her family? Or maybe she’ll take a lucrative job for the merchant guild in a big city?
+            .feature-additional-info
+              p Vena is following in her parents' footsteps. Ever since her 14th birthday she regularly joined them in their hunting expeditions to support them with her spear. Even though she became an adult only a year ago, she’s considered to be a promising warrior, ready to protect her village and brave enough to risk her well-being for the sake of others. 
+              p However, she doesn’t enjoy living in Windy Meadow. Many of her friends moved away, the tavern doesn’t offer good drinks aside of some decent cider and she often finds herself bored. At least her siblings are here to keep her company. Dangerous beasts in the forests surely provide entertainment, but the older she is, the more worried she gets that a single wrong step can be the last one she's ever going to make.  
+              p Her actions and her father’s relationship with rich townsmen from Berytus opened a new door. The merchant guild is looking for skillful bodyguards and this profitable position would surely allow Vena to live in prosperity and enjoy herself.              
+              p However, she can’t stop thinking about her home. She keeps worrying that once she leaves, something bad may happen. And she may never see her loved ones again.              
+              p Will she stay with her family? Or maybe she’ll take this lucrative job and pursue her ambitions?
+
+        .row.feature-row.fabel
+          .col.col-6.col-desktop-offset-1.col-tablet-8.col-mobile-12.text-col
+            h3.feature-header Fabel
+            p
+              | How about
+              strong &#32;Fabel
+              |? He wants to become a famous bard, but his rough past complicates so many things. Should he follow his dream, or is it already time to wake up?
+            .feature-additional-info
+              p Fabel has experienced quite a lot, especially for a 16 year old. When he was still a little kid, a group of bandits overran his village and burned it to the ground. Not only were his parents  killed right in front of him, but also one of the attackers brutally chopped off his legs. 
+              p Luckily, a traveling priest who rented a room in the nearby inn was able to step in and rescue both of them. Why he chose to adopt the boy remains a mystery... Fabel knows he should be grateful, but he never overcame his bitterness. He keeps thinking that his "real" life was taken away from him. Stolen and shattered.
+              p Forced to use both arms to move around, his career options are rather limited. He takes care of the household chores and helps the villagers of Windy Meadow, especially farmers, with their mundane tasks, but with no real trade or training he keeps worrying about the future.
+              p Most of his greatest memories involve the tales about distant lands that he heard from the village elders, bards, mercenaries, soldiers and travelers. Once he realized that he was pretty good at memorizing these stories and creating the new ones, he decided to become a storyteller himself. After all, being a bard is a pretty decent profession, even if it's risky.
+              p Should he follow his dream, or is it already time to wake up?
+          .col.col-4.col-mobile-12.image-col
+            img(src='/assets/images/windy-meadow/FabelFace.png')
+          
+
+        .row.feature-row.iudicia
+          .col.col-4.col-desktop-offset-1.col-mobile-12.image-col
+            img(src='/assets/images/windy-meadow/IudiciaFace.png')
+          .col.col-6.col-tablet-8.col-mobile-12.text-col
+            h3.feature-header Iudicia
+            p
+              | And is the local outsider, a talented herbalist
+              strong &#32;Iudicia
+              |, going to marry a man she doesn’t love? Or is she going to spend her future alone, and, maybe, lonely?
+            .feature-additional-info
+              p Iudicia haven’t even noticed her 21st birthday. She asked her foster-mother, the local herbalist, to ignore such silly celebrations. Birthdays make her nostalgic and she does her best to forget about her childhood.
+              p The stigma of a weird child followed her from the very beginning. Her parents didn’t know how to raise her and when she was six they decided to give her up to adoption. Iudicia never forgot the first weeks she spent in her new home, terrified, lost and angry. 
+              p She wasn't interested in playing with other children and spent most of her days observing plants and animals. As a teenager she started studying from her foster-mother about diseases and preparing various remedies, but even as a herbalist’s assistant she finds it difficult to engage in a simple small talk or looking for friendships. She has a well-organized life which shouldn’t bother anyone and she doesn’t want any interference.
+              p And even though Evolo was at first one of these interferences, she doesn’t mind his presence anymore.
+              p They are interested in similar topics and they like to be with each other. When he proposed to her, she said yes. 
+              p But is she really going to marry a man she doesn’t love, or will she instead spend her future alone, and, maybe, lonely?
+
+    section#faq.faq-section
+      .grid
+        .row
+          .col.col-desktop-10.col-desktop-offset-1
+            h2 Frequently Asked Questions
+
+            .faq-question-wrapper
+              p.faq-question
+                | Q: Visual Novel? What’s that?
+              p.faq-ansqwer
+                | A: VNs were invented in Japan in early 90s. They merge a video game with cool graphics, music and so on with traditional novels - they involve a lot of reading and are mostly focused on the story and characters.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: I’ve heard Visual Novels contain porn elements and cute girls to flirt with.
+              p.faq-ansqwer
+                | A: Many of them do, but some of them experiment and take risks to introduce a unique storytelling experience.
+                strong &#32;Tales From Windy Meadow&#32;
+                | takes the second route and it doesn’t contain any sort of dating simulation or nudity.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: Can I influence the story in any way?
+              p.faq-ansqwer
+                | A: While playing
+                strong &#32;Tales From Windy Meadow&#32;
+                | you stand in front of many dialogue choices which will affect the plot and the overall ending of the story.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: How long is this game?
+              p.faq-answer              
+                | A: We are aiming at 3-4 hours.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: Are you going to support languages other than English?
+              p.faq-ansqwer
+                | A: We can’t be sure in how many languages the game will be released, but we definitely plan to introduce additional translations in the future. We currently plan to translate the game in Polish, Spanish, Traditional Chinese and Simplified Chinese.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: What about platforms other than Windows?
+              p.faq-ansqwer
+                | A: If the game turns out to be a success, there is a good chance it will be released on Linux, Mac and Android/iOS. We don’t have the manpower to do it right now.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: When can we expect the release?
+              p.faq-ansqwer
+                | A: We’re aiming at
+                strong &#32;May of 2018.
+
+    section.social-section
+      .grid
+        .row
+          .col.col-desktop-5.col-desktop-offset-1.col-tablet-5.col-tablet-offset-1
+            h2
+              | Follow us
+              br
+              | for updates
+          .col.col-6.col-mobile-12
+            .social-link.twitter
+              h4 Twitter
+              script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
+              a.twitter-follow-button(href='https://twitter.com/MoralAnxiety', onclick='ga("send", "social", "Twitter", "follow");', data-show-count='false', data-size='large' data-dnt='true') Follow @MoralAnxiety
+
+            .social-link.facebook
+              h4 Facebook
+              .fb-page(data-href='https://www.facebook.com/moralanxiety', data-width='300', data-height='70', data-small-header='true', data-adapt-container-width='false', data-hide-cover='false', data-show-facepile='false')
+                blockquote.fb-xfbml-parse-ignore(cite='https://www.facebook.com/moralanxiety')
+                  a(href='https://www.facebook.com/moralanxiety') Moral Anxiety Studio
+
+            .social-link.youtube
+              h4 YouTube
+              .g-ytsubscribe(data-channelid='UCqORtPfGLasjXPUJwch5IDA', data-layout='full', data-theme='light', data-count='hidden', data-onytevent='onYtEvent')
+
+    footer.footer-main
+      span
+        .footer-info
+          span Icons: 
+          a(href='http://www.freepik.com') freepik.com
+        .footer-info
+          span Website: 
+          span Joanna Falkowska
+        .footer-info
+          span © Moral Anxiety Studio 2017

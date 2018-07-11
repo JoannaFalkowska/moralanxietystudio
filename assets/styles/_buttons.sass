@@ -1,0 +1,26 @@
+.btn, button
+  display: inline-block
+  max-width: calc(100% - 30px)
+  padding: 20px 50px
+  color: $lemon
+  font-size: 24px
+  white-space: nowrap
+  font-weight: 600
+  font-family: $font-family-sc
+  text-align: center
+  background-color: transparent
+
+  background-size: 100% 200%
+  transition: background-position 0.2s
+
+
+.btn:hover
+  background-position: 0 100%
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(white, 0.09) 50%)
+.btn:active
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(white, 0.18) 50%)
+
+@media (max-width: $breakpoint-tablet)
+  .btn
+    line-height: 1
+    padding: 15px 20px

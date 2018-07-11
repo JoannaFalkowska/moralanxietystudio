@@ -1,0 +1,54 @@
+.header-main
+  position: fixed
+  top: 0
+  z-index: 5
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  height: $header-height
+  background-color: $header-background
+  font-size: 22px
+  color: $header-link-color
+  white-space: nowrap
+
+  .social-links
+    display: flex
+
+  .social-link
+    +square(45px)
+    +background-icon
+    display: block
+    position: relative
+    font-size: 0
+    svg 
+      +center-xy
+      +square(55%)
+      position: absolute
+    path 
+      fill: $header-link-color
+    &:hover path
+      fill: $header-link-color-hover
+  .social-link + .social-link
+    margin-left: 20px
+
+  .page-link
+    font-family: $font-family-sc
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: inline-block
+    height: $header-height
+    line-height: $header-height
+    padding: 0 20px
+    &:hover
+      color: $header-link-color-hover
+
+  .active
+    color: $header-link-color-active
+    pointer-events: none
+    &:hover
+      color: lighten($header-link-color-active, 20%)
+
+  @media (max-width: $breakpoint-tablet)
+    .active
+      display: none

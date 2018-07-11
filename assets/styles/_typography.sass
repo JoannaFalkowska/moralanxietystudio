@@ -1,0 +1,42 @@
+html, body
+  font-family: $font-family
+  font-size: $font-size
+  line-height: 1.3
+  font-weight: 400
+  color: $body-color
+
+h1
+  font-size: (72rem/20)
+  font-weight: 300
+
+h2
+  font-size: (48rem/20)
+  font-weight: 300
+  text-align: center
+  font-family: $font-family-sc
+
+h3
+  font-size: (36rem/20)
+  font-weight: 300
+
+h4
+  font-size: (28rem/20)
+  font-weight: 400
+
+h5
+  font-size: (24rem/20)
+  font-weight: 300
+
+.warning
+  // color: red
+  font-size: (14rem/20)
+
+::selection
+  background-color: $selection-background
+  color: $selection-color
+::-moz-selection
+  background-color: $selection-background
+  color: $selection-color
+
+strong::after, strong::before // fixes no space
+  content: ' '
