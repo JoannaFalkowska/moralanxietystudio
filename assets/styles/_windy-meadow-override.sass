@@ -3,11 +3,14 @@ h2
 strong::after, strong::before
   content: none
 
+.introduction-section
+  padding-top: 30px
+
 .features-section
   background: $iceberg
   .features-header-row
     margin-bottom: 0    
-  .feature-row:last-of-type
+  .feature-row.iudicia
     img
       transform: scaleX(-1)
 
@@ -25,6 +28,10 @@ strong::after, strong::before
       margin-top: 20px
   .feature-row.open
     transition: background-color 0.8s ease-in-out
+    img.smiling
+      display: block
+    img.smiling + img
+      display: none
     .feature-additional-info
       border-top: 2px solid $body-color
       margin-top: 20px
@@ -36,22 +43,35 @@ strong::after, strong::before
       background-color: lighten($fabel-background-color, 15%)
     &.iudicia
       background-color: lighten($iudicia-background-color, 15%)
-  .feature-row:hover:not(.open)
+    &.map
+      background-color: lighten($map-background-color, 15%)
+  .feature-row:not(.open)
+    img.smiling
+      display: none      
+  .feature-row:not(.open):hover
     &.vena
       background-color: lighten($vena-background-color, 20%)
     &.fabel
       background-color: lighten($fabel-background-color, 20%)
     &.iudicia
       background-color: lighten($iudicia-background-color, 20%)
+    &.map
+      background-color: lighten($map-background-color, 20%)
+
   .feature-row.open + .feature-row
     margin-bottom: 10px
     
-
   @media (min-width: $breakpoint-mobile + 1)
     img 
       width: 100%
     .feature-row
       margin-right: -20px
+    .feature-row.map
+      .image-col
+        margin-left: 10px;
+      .text-col
+        padding: 20px 20px 20px 0;
+
   @media (max-width: $breakpoint-mobile)
     .image-col 
       text-align: center
@@ -61,19 +81,34 @@ strong::after, strong::before
     .feature-row 
       margin-right: -15px
       padding-right: 15px
+    .feature-row.map .image-col
+      order: initial
+    
       
 
 .introduction-section
   .logo-col
     text-align: center
-  .logo
+  .logo-wrapper  
     display: inline-block
     width: 50%
     margin: 0 0 50px
+  .logo
+  .steam-note
+    text-transform: uppercase
+    font-size: 25px
+    letter-spacing: 2px
+    padding-right: 5%;
+    text-align: right
+    svg 
+      display: inline-block
+      height: 20px
+      margin-left: 2px
+
   .introduction-image.main
-    margin: 30px 0
+    margin: 50px 0
   .introduction-image
-    box-shadow: 0px 0px 20px 3px rgba(black, 1)
+    box-shadow: 0px 0px 20px 3px #{$image-shadow}
   .introduction-gallery
     margin: 60px 0 30px
     display: flex
@@ -89,7 +124,7 @@ strong::after, strong::before
     .introduction-gallery .introduction-image
       width: 30%
   @media (max-width: $breakpoint-mobile)
-    .logo
+    .logo-wrapper
       width: 100%
     .introduction-gallery
       flex-wrap: wrap
@@ -107,6 +142,11 @@ strong::after, strong::before
     margin-bottom: 0
   .faq-question-wrapper
     margin-top: 40px
+
+.social-section  
+  @media (max-width: $breakpoint-tablet)
+    h2
+      text-align: center
 
 .social-section, footer
   background: $foam

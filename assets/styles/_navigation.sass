@@ -23,12 +23,22 @@
     font-size: 0
     svg 
       +center-xy
-      +square(55%)
+      +square(60%)
       position: absolute
-    path 
-      fill: $header-link-color
-    &:hover path
-      fill: $header-link-color-hover
+
+    &:not(.steam)
+      path 
+        fill: $header-link-color
+      &:hover path
+        fill: $header-link-color-hover
+    &.steam
+      path
+        fill: $header-background
+      circle
+        fill: $header-link-color
+      &:hover circle
+        fill: $header-link-color-hover
+
   .social-link + .social-link
     margin-left: 20px
 
