@@ -1,4 +1,9 @@
-# deploy to Github pages
+# Moral Anxiety Studio homepage
+
+live: http://moralanxietystudio.com
+
+
+### deploy to Github pages
 
 `gulp buildproduction`
 `cd site`
