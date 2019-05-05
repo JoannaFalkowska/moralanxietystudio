@@ -64,9 +64,6 @@ gulp.task('browser-sync-reload', ['jade', 'html-replace', 'sass', 'css-replace',
   browserSync.reload()
 });
 
-gulp.task('clean', function () {
-  return del('publicDir/**', { force: true });
-});
 
 
 // Compile .jade files
@@ -208,12 +205,12 @@ gulp.task('watch', ['browser-sync'], function () {
  */
 
 gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('buildproduction', ['clean', 'jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace', 'javascript', 'favicons', 'files']);
+gulp.task('build', ['jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace', 'javascript', 'favicons', 'files']);
+gulp.task('clean', function () {
+  console.log('!' + config.publicDir + '/CNAME')
+  return del([config.publicDir + '/**', '!' + config.publicDir, '!' + config.publicDir + '/CNAME']);
+});
 
-gulp.task('serveproduction', function() {
-  connect.server({
-    root: [config.publicDir],
-    port: process.env.PORT || 5000, // localhost:5000
-    livereload: false
-  });
+gulp.task('buildproduction', ['clean'], function() {
+  gulp.start('build');
 });

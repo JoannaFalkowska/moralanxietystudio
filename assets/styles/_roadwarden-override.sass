@@ -1,0 +1,55 @@
+.features-section, .faq-section
+  background: $roadwarden-background-dark
+  
+  
+.introduction-section
+  text-align: center
+  font-size: 28px
+  line-height: 1.5
+
+  .introduction-text
+    margin: 60px 0 40px
+
+  .introduction-image.main
+    margin: 0
+  .introduction-image
+    box-shadow: 0px 0px 20px 3px #{$image-shadow}
+  .introduction-gallery
+    margin: 30px 0
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    .introduction-image
+      display: block
+      width: 30%
+    img
+      margin: 0
+
+  @media (min-width: $breakpoint-mobile + 1px)
+    .introduction-gallery .introduction-image
+      width: 30%
+  @media (max-width: $breakpoint-mobile)
+    .logo-wrapper
+      width: 100%
+    .introduction-gallery
+      flex-wrap: wrap
+      .introduction-image
+        width: 100%
+      .introduction-image + .introduction-image
+        margin-top: 20%
+
+.features-section
+  ul.features-list
+    list-style-type: circle
+    li 
+      display: list-item
+    li + li 
+      margin-top: 20px
+
+.download-section
+  padding: 100px 0
+  .download-demo
+    margin-bottom: 30px
+
+.faq-section
+  font-size: 20px
