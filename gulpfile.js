@@ -25,23 +25,33 @@ var gulp = require('gulp'),
 */
 var config = {
   publicDir: 'site',
+
   sassDir: 'assets/styles',
-  imageDir: 'assets/images',
-  jsDir: 'assets/scripts',
   cssDir: 'site/assets/styles',
-  imageAssetDir: 'site/assets/images',
-  faviconDir: 'assets/favicons',
-  filesDir: 'assets/files',
-  filesTargetDir: 'site/public',
+
+  imageDir: 'assets/images',
+  
+  jsDir: 'assets/scripts',
   jsAssetDir: 'site/assets/scripts',
   jsAssetVendorDir: 'site/assets/scripts/vendor',
+
+  imageAssetDir: 'site/assets/images',
+  
+  faviconDir: 'assets/favicons',
+  
+  filesDir: 'assets/files',
+  filesTargetDir: 'site/public',
+
+  presskitDir: 'presskit',
+  presskitTargetDir: 'site/presskit',
+
   production: !!util.env.production,
 };
 
 /**
  * Wait for jade and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['jade', 'html-replace', 'sass', 'css-replace', 'favicons', 'files'], function () {
+gulp.task('browser-sync', ['browser-sync-reload', 'favicons', 'files'], function () {
   browserSync({
     server: {
       baseDir: config.publicDir
@@ -50,8 +60,12 @@ gulp.task('browser-sync', ['jade', 'html-replace', 'sass', 'css-replace', 'favic
   });
 });
 
-gulp.task('browser-sync-reload', ['jade', 'html-replace', 'sass', 'css-replace'], function () {
+gulp.task('browser-sync-reload', ['jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace'], function () {
   browserSync.reload()
+});
+
+gulp.task('clean', function () {
+  return del('publicDir/**', { force: true });
 });
 
 
@@ -159,6 +173,22 @@ gulp.task('files', function() {
     .pipe(gulp.dest(config.filesTargetDir))
 })
 
+
+// Move all presskit files into appropriate folder without doing anything to them - just revreplace
+gulp.task('presskit', function() {
+  return gulp.src([config.presskitDir + '/**'])
+    .pipe(gulp.dest(config.presskitTargetDir))
+})
+
+gulp.task('presskit-replace', ['presskit', 'images'], function () {
+  var imageManifest = gulp.src(config.imageAssetDir + "/rev-manifest.json");
+  return gulp.src([config.presskitTargetDir + "/*.css", config.presskitTargetDir + "/*.html"])
+    .pipe(revReplace({ manifest: imageManifest }))
+    .pipe(gulp.dest(config.presskitTargetDir))
+    .pipe(browserSync.reload({ stream: true }));
+})
+
+
 /**
  * Watch scss files for changes & recompile
  * Watch .jade files run jade-rebuild then reload BrowserSync
@@ -167,6 +197,7 @@ gulp.task('watch', ['browser-sync'], function () {
   gulp.watch(config.sassDir + '/**', ['browser-sync-reload']);
   gulp.watch(config.imageDir + '/**', ['browser-sync-reload']);
   gulp.watch(config.jsDir + '/**', ['browser-sync-reload']);
+  gulp.watch(config.presskitDir + '/**', ['browser-sync-reload']);
   gulp.watch(['*.jade', '**/*.jade'], ['browser-sync-reload']);
 });
 
@@ -177,7 +208,7 @@ gulp.task('watch', ['browser-sync'], function () {
  */
 
 gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('buildproduction', ['jade', 'html-replace', 'sass', 'css-replace', 'javascript', 'favicons', 'files']);
+gulp.task('buildproduction', ['clean', 'jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace', 'javascript', 'favicons', 'files']);
 
 gulp.task('serveproduction', function() {
   connect.server({
