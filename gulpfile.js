@@ -16,6 +16,7 @@ var gulp = require('gulp'),
   babel = require('gulp-babel'),
   concat = require('gulp-concat'),
   connect = require('gulp-connect'),
+  rename = require('gulp-rename'),
   pump = require('pump'),
   del = require('del'),
   browserSync = require('browser-sync');
@@ -46,12 +47,19 @@ var config = {
   presskitTargetDir: 'site/presskit',
 
   production: !!util.env.production,
+
+  indexPage: 'roadwarden' // current index page
 };
+
+var buildTasks = ['jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace', 'set-index']
+var oneTimeTasks = ['favicons', 'files']
+var allBuildTasks = buildTasks.concat(oneTimeTasks)
+
 
 /**
  * Wait for jade and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['browser-sync-reload', 'favicons', 'files'], function () {
+gulp.task('browser-sync', ['browser-sync-reload'].concat(oneTimeTasks), function () {
   browserSync({
     server: {
       baseDir: config.publicDir
@@ -60,7 +68,7 @@ gulp.task('browser-sync', ['browser-sync-reload', 'favicons', 'files'], function
   });
 });
 
-gulp.task('browser-sync-reload', ['jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace'], function () {
+gulp.task('browser-sync-reload', buildTasks, function () {
   browserSync.reload()
 });
 
@@ -186,6 +194,14 @@ gulp.task('presskit-replace', ['presskit', 'images'], function () {
 })
 
 
+// Copy chosen frontpage file to index.html
+gulp.task('set-index', ['html-replace'], function() {
+  return gulp.src([config.publicDir + "/" + config.indexPage + ".html"])
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest(config.publicDir));
+})
+
+
 /**
  * Watch scss files for changes & recompile
  * Watch .jade files run jade-rebuild then reload BrowserSync
@@ -205,7 +221,7 @@ gulp.task('watch', ['browser-sync'], function () {
  */
 
 gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('build', ['jade', 'html-replace', 'sass', 'css-replace', 'presskit', 'presskit-replace', 'javascript', 'favicons', 'files']);
+gulp.task('build', allBuildTasks);
 gulp.task('clean', function () {
   console.log('!' + config.publicDir + '/CNAME')
   return del([config.publicDir + '/**', '!' + config.publicDir, '!' + config.publicDir + '/CNAME']);
