@@ -3,14 +3,14 @@ html(lang='en')
     meta(charset='utf-8')
 
     title Roadwarden | Moral Anxiety Studio
-    meta(name='description' content='Roadwarden is an interactive fiction in which you explore and change a hostile, grim realm.')
+    meta(name='description' content='Roadwarden is an an illustrated text-based RPG in which you explore and change a hostile, grim realm.')
     meta(name='keywords' content='Roadwarden, Roadwarden game, Moral Anxiety Studio, visual novel, narrative game, interactive game, interactive fiction')
 
     //- og-properties
     meta(property='og:url' content='http://www.moralanxietystudio.com')
     meta(property='og:type' content='website')
     meta(property='og:title' content='Roadwarden | Moral Anxiety Studio')
-    meta(property='og:description' content='Roadwarden is an interactive fiction in which you explore and change a hostile, grim realm.')
+    meta(property='og:description' content='Roadwarden is an an illustrated text-based RPG in which you explore and change a hostile, grim realm.')
     meta(property='og:image' content='http://www.moralanxietystudio.com/assets/images/roadwarden/preview.png')
     //- end of og-properties
 
@@ -221,12 +221,16 @@ html(lang='en')
 
     section#demo.download-section
       h2 Demo
-      a(href='https://drive.google.com/file/d/1bFh7tD2dp6YRPzTUgQUwpizp6jBYATbY/view', onclick='ga("send", "event", "download", "Roadwarden demo");')
-        button.btn.download-demo Download Roadwarden demo
+      div
+        a(href='https://drive.google.com/file/d/1bFh7tD2dp6YRPzTUgQUwpizp6jBYATbY/view', onclick='ga("send", "event", "download", "Roadwarden demo");')
+          button.btn.download-demo Demo - Windows & Linux
+      div
+      a(href='https://drive.google.com/file/d/1vbFBRcJrUGlJhyRR_X4RQdRoAqnDTX_T/view', onclick='ga("send", "event", "download", "Roadwarden demo");')
+        button.btn.download-demo Demo - Mac
 
       h2 Presskit
       a(href="/presskit/roadwarden")
-        button.btn.presskit See Roadwarden presskit
+        button.btn.presskit See Presskit
 
     section#faq.faq-section
       .grid
@@ -253,7 +257,7 @@ html(lang='en')
             .faq-question-wrapper
               p.faq-question
                 | Q: How long is this game?
-              p.faq-answer              
+              p.faq-answer
                 | A: I’m currently aiming at 
                 strong &#32;10+ hours
                 |, but it strongly depends on how fast can you read and in how many quests are you going to involve your character. Just remember that the traveling in Roadwarden is very fast, so you won’t pointlessly walk around or fetch items from one part of the map to another. All things are played quickly, with no grind to deal with.
@@ -264,7 +268,7 @@ html(lang='en')
                 | A: Only if the game becomes a large success.
             .faq-question-wrapper
               p.faq-question
-                | Q: What about platforms other than Windows / Linux?
+                | Q: What about platforms other than Windows / Linux / Mac?
               p.faq-ansqwer
                 | A: If the game turns out to be a success, I’ll be happy to work on some mobile ports.
             .faq-question-wrapper
@@ -273,6 +277,17 @@ html(lang='en')
               p.faq-ansqwer
                 | A: Not sooner than
                 strong &#32;Q1 of 2020.
+            .faq-question-wrapper
+              p.faq-question
+                | Q: How about a pixel font instead of the one I saw in the screenshots?
+              p.faq-answer
+                | A: You can actually use the game’s settings to switch to a pixel font whenever you want! But I’d guess that after thirty minutes or a couple of hours you may agree with me that pixel fonts are not really that comfortable to read. Nevertheless, if you think it’s more pleasant to you, it’s available. 
+            .faq-question-wrapper
+              p.faq-question
+                | Q: What software do you use to draw?
+              p.faq-answer
+                | A: I use Pyxel Edit.
+
 
     section.social-section
       .grid
