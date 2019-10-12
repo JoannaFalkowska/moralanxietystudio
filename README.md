@@ -3,6 +3,10 @@
 live: http://moralanxietystudio.com
 
 
+### development
+
+`gulp`.
+
 ### deploy to Github pages
 
 `gulp buildproduction`
