@@ -155,7 +155,11 @@ html(lang='en')
       nav.page-links
         a.page-link(href='/') Roadwarden
         a.page-link.active(href='/tales-from-windy-meadow') Tales From Windy Meadow
-        a.page-link(href='/tavern') The Tavern
+        div.page-link-dropdown
+          div.page-link.page-link-dropdown__title Other projects
+          ul.page-link-dropdown__list
+            li
+              a.page-link(href='/tavern') The Tavern
 
     section#story.introduction-section
       .grid

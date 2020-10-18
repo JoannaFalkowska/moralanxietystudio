@@ -42,6 +42,9 @@
   .social-link + .social-link
     margin-left: 20px
 
+  .page-links 
+    display: flex
+
   .page-link
     font-family: $font-family-sc
     font-weight: 600;
@@ -56,9 +59,25 @@
   .active
     color: $header-link-color-active
     pointer-events: none
-    &:hover
-      color: lighten($header-link-color-active, 20%)
+
+  .page-link-dropdown
+    position: relative
+
+    &__title
+      pointer-events: none
+
+    &__list
+      position: fixed
+      width: 100%
+      display: none
+
+    &:hover 
+      background: lighten($header-background, 5%)
+
+      .page-link-dropdown__list
+        background: lighten($header-background, 5%)
+        display: block
 
   @media (max-width: $breakpoint-tablet)
-    .active
+    .page-link-dropdown, .active, 
       display: none
