@@ -1,4 +1,4 @@
-h2 
+h2
   font-weight: 400
 strong::after, strong::before
   content: none
@@ -9,7 +9,7 @@ strong::after, strong::before
 .features-section
   background: $iceberg
   .features-header-row
-    margin-bottom: 0    
+    margin-bottom: 0
   .feature-row.iudicia
     img
       transform: scaleX(-1)
@@ -17,14 +17,14 @@ strong::after, strong::before
   // characted info space
   .feature-row
     padding: 20px 0 30px
-    cursor: pointer    
+    cursor: pointer
   .feature-header
     text-decoration: underline
   .feature-additional-info
     max-height: 0
     overflow: hidden
     transition: all 0.6s ease-in-out
-    p + p 
+    p + p
       margin-top: 20px
   .feature-row.open
     transition: background-color 0.8s ease-in-out
@@ -47,7 +47,7 @@ strong::after, strong::before
       background-color: lighten($map-background-color, 15%)
   .feature-row:not(.open)
     img.smiling
-      display: none      
+      display: none
   .feature-row:not(.open):hover
     &.vena
       background-color: lighten($vena-background-color, 20%)
@@ -60,9 +60,9 @@ strong::after, strong::before
 
   .feature-row.open + .feature-row
     margin-bottom: 10px
-    
+
   @media (min-width: $breakpoint-mobile + 1)
-    img 
+    img
       width: 100%
     .feature-row
       margin-right: -20px
@@ -73,23 +73,23 @@ strong::after, strong::before
         padding: 20px 20px 20px 0;
 
   @media (max-width: $breakpoint-mobile)
-    .image-col 
+    .image-col
       text-align: center
     img
       display: inline-block
       width: 80%
-    .feature-row 
+    .feature-row
       margin-right: -15px
       padding-right: 15px
     .feature-row.map .image-col
       order: initial
-    
-      
+
+
 
 .introduction-section
   .logo-col
     text-align: center
-  .logo-wrapper  
+  .logo-wrapper
     display: inline-block
     width: 50%
     margin: 0 0 50px
@@ -100,7 +100,7 @@ strong::after, strong::before
     letter-spacing: 2px
     padding-right: 5%;
     text-align: right
-    svg 
+    svg
       display: inline-block
       height: 20px
       margin-left: 2px
@@ -132,21 +132,21 @@ strong::after, strong::before
         width: 100%
       .introduction-image + .introduction-image
         margin-top: 20%
-        
 
 
-.faq-section  
+
+.faq-section
   background: $hawkes
   font-size: 1rem
-  h2 
+  h2
     margin-bottom: 0
   .faq-question-wrapper
     margin-top: 40px
 
-.social-section  
+.follow-section
   @media (max-width: $breakpoint-tablet)
     h2
       text-align: center
 
-.social-section, footer
+.follow-section, footer
   background: $foam

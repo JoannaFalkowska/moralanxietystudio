@@ -3,7 +3,7 @@ html, body
   width: 100%
 
 .grid
-  max-width: $breakpoint-desktop
+  max-width: $breakpoint-desktop-large
   margin-left: auto
   margin-right: auto
   padding-left: 15px
@@ -24,12 +24,20 @@ html, body
   flex-basis: calc((100% / #{$columns} * #{$i}) - #{$gutter})
 =set-offset($i)
   margin-left: calc((100% / #{$columns} * #{$i}) + #{$gutter})
-  
+
 @for $i from 1 through $columns
   .col-#{$i}
     +set-columns($i)
   .col-offset-#{$i}
     +set-offset($i)
+
+// TODO: desktop-large
+// @media (min-width: $breakpoint-tablet + 1px)
+//   @for $i from 1 through $columns
+//     .col-desktop-#{$i}
+//       +set-columns($i)
+//     .col-desktop-offset-#{$i}
+//       +set-offset($i)
 
 @media (min-width: $breakpoint-tablet + 1px)
   @for $i from 1 through $columns
