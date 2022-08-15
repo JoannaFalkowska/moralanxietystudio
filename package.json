@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Moral Anxiety Studio website",
   "engines": {
-    "node": "6.11.1"
+    "node": "8.9.4"
   },
   "main": "app.js",
   "scripts": {

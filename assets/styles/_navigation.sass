@@ -12,22 +12,22 @@
   color: $header-link-color
   white-space: nowrap
 
-  .social-links
+  .follow-links
     display: flex
 
-  .social-link
+  .follow-link
     +square(45px)
     +background-icon
     display: block
     position: relative
     font-size: 0
-    svg 
+    svg
       +center-xy
       +square(60%)
       position: absolute
 
     &:not(.steam)
-      path 
+      path
         fill: $header-link-color
       &:hover path
         fill: $header-link-color-hover
@@ -39,10 +39,10 @@
       &:hover circle
         fill: $header-link-color-hover
 
-  .social-link + .social-link
+  .follow-link + .follow-link
     margin-left: 20px
 
-  .page-links 
+  .page-links
     display: flex
 
   .page-link
@@ -71,7 +71,7 @@
       width: 100%
       display: none
 
-    &:hover 
+    &:hover
       background: lighten($header-background, 5%)
 
       .page-link-dropdown__list
@@ -79,5 +79,10 @@
         display: block
 
   @media (max-width: $breakpoint-tablet)
-    .page-link-dropdown, .active, 
+    .page-link-dropdown, .active,
+      display: none
+
+  @media (max-width: $breakpoint-mobile)
+    justify-content: center
+    .page-links
       display: none
