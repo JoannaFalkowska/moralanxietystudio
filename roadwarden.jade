@@ -77,8 +77,8 @@ html(lang='en')
       }
 
     header.header-main
-      nav.follow-links
-        a.follow-link.facebook(href='https://www.facebook.com/MoralAnxiety/', onclick='ga("send", "social", "Facebook", "click");')
+      nav.header-links
+        a.header-link.facebook(href='https://www.facebook.com/MoralAnxiety/', onclick='ga("send", "social", "Facebook", "click");')
           span Facebook
           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 310 310')
             path(d='M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064\
@@ -86,7 +86,7 @@ html(lang='en')
               V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545\
               C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703\
               c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z')
-        a.follow-link.twitter(href='https://twitter.com/MoralAnxiety', onclick='ga("send", "social", "Twitter", "click");')
+        a.header-link.twitter(href='https://twitter.com/MoralAnxiety', onclick='ga("send", "social", "Twitter", "click");')
           span Twitter
           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 310 310')
             path(d='M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73\
@@ -102,7 +102,7 @@ html(lang='en')
             c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998\
             C307.394,57.037,305.009,56.486,302.973,57.388z')
 
-        a.follow-link.youtube(href='https://www.youtube.com/channel/UCqORtPfGLasjXPUJwch5IDA', onclick='ga("send", "social", "YouTube", "click");')
+        a.header-link.youtube(href='https://www.youtube.com/channel/UCqORtPfGLasjXPUJwch5IDA', onclick='ga("send", "social", "YouTube", "click");')
           span YouTube
           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='90.677px', height='90.677px', viewbox='0 0 90.677 90.677')
             path(d='M82.287,45.907c-0.937-4.071-4.267-7.074-8.275-7.521c-9.489-1.06-19.098-1.065-28.66-1.06\
@@ -133,7 +133,7 @@ html(lang='en')
             M39.988,16.294c0-2.387,0.724-3.577,2.231-3.577c1.507,0,2.229,1.189,2.229,3.577v10.852c0,2.387-0.722,3.581-2.229,3.581\
             c-1.507,0-2.231-1.194-2.231-3.581V16.294z')
 
-        a.follow-link.email(href='mailto:moralanxietystudio@gmail.com')
+        a.header-link.email(href='mailto:moralanxietystudio@gmail.com')
           span Contact Us
           svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 64 64')
             path(fill='#222' d='M53.42 53.32H10.58a8.51 8.51 0 0 1-8.5-8.5V19.18a8.51 8.51 0 0 1 8.5-8.5h42.84a8.51 8.51 0 0 1 8.5 8.5v25.64a8.51 8.51 0 0 1-8.5 8.5ZM10.58 13.68a5.5 5.5 0 0 0-5.5 5.5v25.64a5.5 5.5 0 0 0 5.5 5.5h42.84a5.5 5.5 0 0 0 5.5-5.5V19.18a5.5 5.5 0 0 0-5.5-5.5Z')
@@ -142,7 +142,7 @@ html(lang='en')
 
 
 
-        a.follow-link.steam(href='https://store.steampowered.com/app/1155970/Roadwarden/', onclick='ga("send", "store", "Steam", "click");')
+        a.header-link.steam(href='https://store.steampowered.com/app/1155970/Roadwarden/', onclick='ga("send", "store", "Steam", "click");')
           span Steam
           svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 49 49')
             g(transform='matrix(1.16875 0 0 1.16875-453.29-587.31)')
@@ -322,7 +322,7 @@ html(lang='en')
               p.faq-answer
                 | A: I use Pyxel Edit.
 
-    section.follow-section
+    section.updates-section
       .grid
         .row
           .col.col-desktop-5.col-desktop-offset-1
@@ -331,27 +331,27 @@ html(lang='en')
               br
               | for updates!
           .col.col-6.col-mobile-12
-            .follow-link.steam
+            .updates-link.steam
               h4 Steam
               .steam-wrapper
                 iframe(src="https://store.steampowered.com/widget/1155970/", frameborder="0", width="646", height="190")
 
-            .follow-link.twitter
+            .updates-link.twitter
               h4 Twitter
               script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
               a.twitter-follow-button(href='https://twitter.com/MoralAnxiety', onclick='ga("send", "social", "Twitter", "follow");', data-show-count='false', data-size='large' data-dnt='true') Follow @MoralAnxiety
 
-            .follow-link.facebook
+            .updates-link.facebook
               h4 Facebook
               .fb-page(data-href='https://www.facebook.com/moralanxiety', data-width='300', data-height='70', data-small-header='true', data-adapt-container-width='false', data-hide-cover='false', data-show-facepile='false')
                 blockquote.fb-xfbml-parse-ignore(cite='https://www.facebook.com/moralanxiety')
                   a(href='https://www.facebook.com/moralanxiety') Moral Anxiety Studio
 
-            .follow-link.youtube
+            .updates-link.youtube
               h4 YouTube
               .g-ytsubscribe(data-channelid='UCqORtPfGLasjXPUJwch5IDA', data-layout='full', data-theme='light', data-count='hidden', data-onytevent='onYtEvent')
 
-            .follow-link.soundcloud
+            .updates-link.soundcloud
               h4 SoundCloud
               .soundcloud-wrapper
                 iframe(width="100%" height="320" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/892033939&color=%23f6d6bd&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
