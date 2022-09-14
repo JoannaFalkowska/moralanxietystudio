@@ -1,7 +1,6 @@
 body {
 	padding: 15px 0;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 0.9em;
 	line-height:1.6em;
 }
 
@@ -58,7 +57,7 @@ img {
 
 .content .iframe-container {
 	position: relative;
-	/* Magic! Makes sure the container is high enough to show the entire iframe 
+	/* Magic! Makes sure the container is high enough to show the entire iframe
 	 * Thanks to http://andmag.se/2011/11/responsive-embeds/ */
 	padding-bottom: 56.5%;
 }
@@ -75,4 +74,21 @@ img {
 	h2 {
 		margin-top: 25px;
 	}
+}
+
+
+
+
+.yt-iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.yt-iframe-wrapper iframe, .yt-iframe-wrapper object, .yt-iframe-wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
