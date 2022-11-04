@@ -29,7 +29,7 @@
     "express": "^4.15.3",
     "express-livereload": "0.0.24",
     "express-rev": "^0.1.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-asset": "0.0.8",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-babel": "^6.1.2",
