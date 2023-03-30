@@ -29,14 +29,14 @@
     &:not(.steam)
       path
         fill: $header-link-color
-      &:hover path
+      &:hover path, &:focus path
         fill: $header-link-color-hover
     &.steam
       path
         fill: $header-background
       circle
         fill: $header-link-color
-      &:hover circle
+      &:hover circle, &:focus circle
         fill: $header-link-color-hover
 
   .header-link + .header-link
@@ -53,7 +53,8 @@
     height: $header-height
     line-height: $header-height
     padding: 0 20px
-    &:hover
+    color: $header-link-color
+    &:hover, &:focus
       color: $header-link-color-hover
 
   .active
@@ -68,10 +69,10 @@
 
     &__list
       position: fixed
-      width: 100%
+      right: 0
       display: none
 
-    &:hover
+    &:hover, &:focus, &:focus-within
       background: lighten($header-background, 5%)
 
       .page-link-dropdown__list
