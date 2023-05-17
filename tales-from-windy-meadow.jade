@@ -37,7 +37,7 @@ html(lang='en')
 
     //- css, js
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel='stylesheet' href='/assets/styles/windy-meadow.css')
+    link(rel='stylesheet' href='/assets/styles/windy-meadow-LEGACY.css')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya+Sans+SC')
 
     script(src='https://code.jquery.com/jquery-3.3.1.min.js' crossorigin='anonymous')
@@ -161,7 +161,7 @@ html(lang='en')
             li
               a.page-link(href='/tavern', tabindex="0") The Tavern
             li
-              a.page-link.active(href='/tales-from-windy-meadow') Tales From Windy Meadow
+              a.page-link.current(href='/tales-from-windy-meadow') Tales From Windy Meadow
 
     section#story.introduction-section
       .grid
@@ -187,7 +187,7 @@ html(lang='en')
             h2 Fantasy pixel-art visual novel
 
         .row
-          .col.col-desktop-10.col-desktop-offset-1
+          .col.col-laptop-10.col-laptop-offset-1
             p
               strong &#32;Tales From Windy Meadow&#32;
               | is a slice-of-life story about
@@ -200,13 +200,13 @@ html(lang='en')
                 iframe(width='1280' height='720' src='https://www.youtube.com/embed/eD9Umv45KLw?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen)
 
         .row
-          .col.col-desktop-10.col-desktop-offset-1
+          .col.col-laptop-10.col-laptop-offset-1
             p Long ago people weren’t as different from us as we tend to think they were.
             p In a small village known as Windy Meadow three young people need to decide what are they going to do with their future. Much sooner than they hoped for.
 
         .row
-          .col.col-desktop-10.col-desktop-offset-1
-            .introduction-gallery
+          .col.col-laptop-10.col-laptop-offset-1
+            .image-gallery
               a.introduction-image(href='assets/images/windy-meadow/screenshots/picture1.png' target = "_blank")
                 img(src='assets/images/windy-meadow/screenshots/picture1.png' alt='Tales From Windy Meadow boat')
               a.introduction-image(href='assets/images/windy-meadow/screenshots/picture2.png' target = "_blank")
@@ -221,7 +221,7 @@ html(lang='en')
             h2 Cast
 
         .row.feature-row.vena
-          .col.col-4.col-desktop-offset-1.col-mobile-12.image-col
+          .col.col-4.col-laptop-offset-1.col-mobile-12.image-col
             img.smiling(src='/assets/images/windy-meadow/venasmile.png')
             img(src='/assets/images/windy-meadow/venabase.png')
           .col.col-6.col-tablet-8.col-mobile-12.text-col
@@ -238,7 +238,7 @@ html(lang='en')
               p Will she stay with her family? Or maybe she’ll take this lucrative job and pursue her ambitions?
 
         .row.feature-row.fabel
-          .col.col-6.col-desktop-offset-1.col-tablet-8.col-mobile-12.text-col
+          .col.col-6.col-laptop-offset-1.col-tablet-8.col-mobile-12.text-col
             h3.feature-header Fabel
             p
               strong &#32;Fabel
@@ -255,7 +255,7 @@ html(lang='en')
 
 
         .row.feature-row.iudicia
-          .col.col-4.col-desktop-offset-1.col-mobile-12.image-col
+          .col.col-4.col-laptop-offset-1.col-mobile-12.image-col
             img.smiling(src='/assets/images/windy-meadow/iudiciasmile.png')
             img(src='/assets/images/windy-meadow/iudiciabase.png')
           .col.col-6.col-tablet-8.col-mobile-12.text-col
@@ -296,7 +296,7 @@ html(lang='en')
     section#faq.faq-section
       .grid
         .row
-          .col.col-desktop-10.col-desktop-offset-1
+          .col.col-laptop-10.col-laptop-offset-1
             h2 Frequently Asked Questions
 
             .faq-question-wrapper
@@ -343,7 +343,7 @@ html(lang='en')
     section.updates-section
       .grid
         .row
-          .col.col-desktop-5.col-desktop-offset-1
+          .col.col-laptop-5.col-laptop-offset-1
             h2
               | Follow us
               br
@@ -375,4 +375,4 @@ html(lang='en')
           span Website:
           span Joanna Falkowska
         .footer-info
-          span © Moral Anxiety Studio 2022
+          span © Moral Anxiety Studio 2023
