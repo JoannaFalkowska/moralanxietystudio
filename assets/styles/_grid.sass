@@ -3,7 +3,7 @@ html, body
   width: 100%
 
 .grid
-  max-width: $breakpoint-desktop-large
+  max-width: $breakpoint-desktop
   margin-left: auto
   margin-right: auto
   padding-left: 15px
@@ -20,42 +20,51 @@ html, body
   padding-right: $gutter/2
 
 =set-columns($i)
-  max-width: calc((100% / #{$columns} * #{$i}) - #{$gutter})
-  flex-basis: calc((100% / #{$columns} * #{$i}) - #{$gutter})
+  @if $i > 0
+    max-width: calc((100% / #{$columns} * #{$i}) - #{$gutter})
+    flex-basis: calc((100% / #{$columns} * #{$i}) - #{$gutter})
+  @else
+    max-width: 0
+    flex-basis: 0
 =set-offset($i)
-  margin-left: calc((100% / #{$columns} * #{$i}) + #{$gutter})
+  @if $i > 0
+    margin-left: calc((100% / #{$columns} * #{$i}) + #{$gutter})
+  @else
+    margin-left: 0
 
-@for $i from 1 through $columns
+.col
+  +set-columns(12)
+
+@for $i from 0 through $columns
   .col-#{$i}
     +set-columns($i)
   .col-offset-#{$i}
     +set-offset($i)
 
-// TODO: desktop-large
-// @media (min-width: $breakpoint-tablet + 1px)
-//   @for $i from 1 through $columns
-//     .col-desktop-#{$i}
-//       +set-columns($i)
-//     .col-desktop-offset-#{$i}
-//       +set-offset($i)
-
-@media (min-width: $breakpoint-tablet + 1px)
-  @for $i from 1 through $columns
-    .col-desktop-#{$i}
+@media (max-width: $breakpoint-mobile)
+  @for $i from 0 through $columns
+    .col-mobile-#{$i}
       +set-columns($i)
-    .col-desktop-offset-#{$i}
+    .col-mobile-offset-#{$i}
       +set-offset($i)
 
-@media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile + 1px)
-  @for $i from 1 through $columns
+@media (min-width: $breakpoint-mobile + 1px)
+  @for $i from 0 through $columns
     .col-tablet-#{$i}
       +set-columns($i)
     .col-tablet-offset-#{$i}
       +set-offset($i)
 
-@media (max-width: $breakpoint-mobile)
-  @for $i from 1 through $columns
-    .col-mobile-#{$i}
+@media (min-width: $breakpoint-tablet + 1px)
+  @for $i from 0 through $columns
+    .col-laptop-#{$i}
       +set-columns($i)
-    .col-mobile-offset-#{$i}
+    .col-laptop-offset-#{$i}
+      +set-offset($i)
+
+@media (min-width: $breakpoint-laptop + 1px)
+  @for $i from 0 through $columns
+    .col-desktop-#{$i}
+      +set-columns($i)
+    .col-desktop-offset-#{$i}
       +set-offset($i)

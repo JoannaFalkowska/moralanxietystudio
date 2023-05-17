@@ -170,14 +170,13 @@ html(lang='en')
                   path(d='m0 0c0-0.806-0.325-1.53-0.853-2.059-0.528-0.527-1.253-0.851-2.057-0.851h-48.315c-0.805 0-1.529 0.324-2.057 0.851-0.528 0.529-0.851 1.253-0.853 2.059v45.578c2e-3 0.805 0.325 1.528 0.853 2.057 0.528 0.527 1.252 0.851 2.057 0.852h48.315c0.804-1e-3 1.529-0.325 2.057-0.852 0.528-0.529 0.853-1.252 0.853-2.057zm-4e-3 48.485c-0.742 0.744-1.772 1.204-2.906 1.204h-48.315c-1.134 0-2.164-0.46-2.906-1.204-0.744-0.742-1.206-1.774-1.206-2.907v-45.578c0-1.134 0.462-2.166 1.206-2.908 0.742-0.743 1.772-1.205 2.906-1.205h48.315c1.134 0 2.164 0.462 2.906 1.205 0.744 0.742 1.206 1.774 1.206 2.908v45.578c0 1.133-0.462 2.165-1.206 2.907')
 
       nav.page-links
-        //- a.page-link.active(href='/') Roadwarden
+        a.page-link.current(href='/', tabindex="0") Roadwarden
+        a.page-link(href='/windy-meadow') Windy Meadow
         div.page-link-dropdown(tabindex="0")
           div.page-link.page-link-dropdown__title Other projects
           ul.page-link-dropdown__list
             li
               a.page-link(href='/tavern', tabindex="0") The Tavern
-            li
-              a.page-link(href='/tales-from-windy-meadow', tabindex="0") Tales From Windy Meadow
 
     //-
     //- END OF NAVIGATION
@@ -186,11 +185,11 @@ html(lang='en')
     section#story.introduction-section
       .grid
         .row
-          .col.logo-col
+          .col
             a.logo-wrapper(href='https://store.steampowered.com/app/1155970/Roadwarden/', onclick='ga("send", "store", "Roadwarden Steam", "click");')
               img.logo(src='assets/images/roadwarden/Roadwarden_Logo_Light_x8.png')
         .row
-          .col.col-desktop-8.col-desktop-offset-2
+          .col.col-laptop-8.col-laptop-offset-2
             p.introduction-text
               | is&nbsp;an&nbsp;illustrated text-based&nbsp;RPG
               br
@@ -207,13 +206,13 @@ html(lang='en')
 
         .row
           .col
-            .introduction-gallery
+            .image-gallery
               .item.main
                 img(src='assets/images/roadwarden/main/4.png' alt='Roadwarden prologue')
 
-              .item.item1(tabindex="0")
-                img(src='assets/images/roadwarden/main/1.png' alt='Roadwarden camp')
               .item.item1
+                img(src='assets/images/roadwarden/main/1.png' alt='Roadwarden camp')
+              .item.item1(tabindex="0")
                 img(src='assets/images/roadwarden/main/1.png' alt='Roadwarden camp')
 
               .item.item2
@@ -249,11 +248,11 @@ html(lang='en')
             h2 Features
 
         .row
-          .col.col-desktop-5.image-col
+          .col.col-laptop-5.image-col
             a(href='assets/images/roadwarden/main/8.png' target = "_blank")
               img(src='assets/images/roadwarden/main/8.png' alt='Roadwarden ruined village')
 
-          .col.col-desktop-6.col-desktop-offset-1.text-col
+          .col.col-laptop-6.col-laptop-offset-1.text-col
             ul.features-list
               li
                 strong &#32;Explore and change the world.&#32;
@@ -334,7 +333,7 @@ html(lang='en')
     section#faq.faq-section
       .grid
         .row
-          .col.col-desktop-8.col-desktop-offset-2
+          .col.col-laptop-8.col-laptop-offset-2
             h2 Frequently Asked Questions
 
             .faq-question-wrapper
@@ -396,7 +395,7 @@ html(lang='en')
     section.updates-section
       .grid
         .row
-          .col.col-desktop-5.col-desktop-offset-1
+          .col.col-laptop-5.col-laptop-offset-1
             h2
               | Follow us
               br
@@ -429,4 +428,4 @@ html(lang='en')
           span Website by&nbsp;
           a(href="https://github.com/JoannaFalkowska") Joanna Falkowska
         .footer-info
-          span © Moral Anxiety Studio 2022
+          span © Moral Anxiety Studio 2023

@@ -144,14 +144,13 @@ html(lang='en')
             L181.482,258.533z M322.008,242.655l139.535-122.536v245.059L322.008,242.655z')
 
       nav.page-links
-        a.page-link(href='/') Check out Roadwarden!
+        a.page-link(href='/', tabindex="0") Roadwarden
+        a.page-link(href='/windy-meadow') Windy Meadow
         div.page-link-dropdown(tabindex="0")
           div.page-link.page-link-dropdown__title Other projects
           ul.page-link-dropdown__list
             li
-              a.page-link.active(href='/tavern', tabindex="0") The Tavern
-            li
-              a.page-link(href='/tales-from-windy-meadow', tabindex="0") Tales From Windy Meadow
+              a.page-link.current(href='/tavern', tabindex="0") The Tavern
 
     section(style="text-align: center")
       h2
@@ -172,7 +171,7 @@ html(lang='en')
               br
               | Complex as a visual novel
         .row
-          .col.col-desktop-10.col-desktop-offset-1
+          .col.col-laptop-10.col-laptop-offset-1
             p
               strong The Tavern
               | uses
@@ -195,7 +194,7 @@ html(lang='en')
             p.warning Warning! This game contains strong language, sexual themes and violence.
 
         .row
-          .col.col-desktop-10.col-desktop-offset-1
+          .col.col-laptop-10.col-laptop-offset-1
             img(src='assets/images/tavern/TheTavern01.png' alt='The Tavern RPG screenshot')
 
 
@@ -204,42 +203,42 @@ html(lang='en')
         .row.features-header-row
           .col
             h2 This story needs YOU to be told!
-          .col.col-tablet-8.col-tablet-offset-2.col-desktop-8.col-desktop-offset-2
+          .col.col-tablet-8.col-tablet-offset-2.col-laptop-8.col-laptop-offset-2
             h5
               | Your decisions are going to shape the plot of the game. A satifying playthrough will take you two hours, but you can spend another dozen looking for various endings, secrets, story branches and Easter eggs!
 
         .row.feature-row
-          .col.col-5.col-mobile-12.image-col
+          .col.col-laptop-5.col-12.image-col
             img(src='/assets/images/tavern/websitechoice.png')
-          .col.col-6.col-tablet-8.col-mobile-12.text-col
+          .col.col-laptop-6.col-tablet-8.col-12.text-col
             h3.feature-header Consequences
             p Your actions are going to shape the world around you and change people’s lives. You are not just a spectator, you are the hero. This is your story.
 
         .row.feature-row
-          .col.col-6.col-desktop-offset-1.col-tablet-8.col-mobile-12.text-col
+          .col.col-laptop-6.col-laptop-offset-1.col-tablet-8.col-12.text-col
             h3.feature-header Complex Relationships
             p One of the core parts of the gameplay are complex, immersive dialogues with plenty of choices. You need to use your wit to predict what’s the best attitude you can show, who are you going to believe and when are you going to lie to get closer to your goals.
-          .col.col-5.col-mobile-12.image-col
+          .col.col-laptop-5.col-12.image-col
             img(src='/assets/images/tavern/websitedialogue.png')
 
         .row.feature-row
-          .col.col-5.col-mobile-12.image-col
+          .col.col-laptop-5.col-12.image-col
             img(src='/assets/images/tavern/websitejournal.png')
-          .col.col-6.col-tablet-8.col-mobile-12.text-col
+          .col.col-laptop-6.col-tablet-8.col-12.text-col
             h3.feature-header Mystery
             p No fetching quests, nor grinding or counterintuitive puzzle solving. Instead, look for the clues and try to understand the mystery of the tavern and motivations of the characters around you. Who can you trust, who may turn out to be your enemy?
 
         .row.feature-row
-          .col.col-6.col-desktop-offset-1.col-tablet-8.col-mobile-12.text-col
+          .col.col-laptop-6.col-laptop-offset-1.col-tablet-8.col-12.text-col
             h3.feature-header Narrative Mechanics
             p Battles, hit points, equipment and other mechanics are strongly connected with the game’s narration. There  are no “gameplay parts” and “story parts” of the game. Our story is our gameplay.
-          .col.col-5.col-mobile-12.image-col
+          .col.col-laptop-5.col-12.image-col
             img(src='/assets/images/tavern/websitedialogue.png')
 
         .row.feature-row
-          .col.col-5.col-mobile-12.image-col
+          .col.col-laptop-5.col-12.image-col
             img(src='/assets/images/tavern/websitestable.png')
-          .col.col-6.col-tablet-8.col-mobile-12.text-col
+          .col.col-laptop-6.col-tablet-8.col-12.text-col
             h3.feature-header Immersive Setting
             p The game’s world is filled with unique details and based on Wiatyk (Viaticum), a tabletop RPG published in Poland. Dark fantasy tones perfectly fit the grim, mature plot of the game.
 
@@ -247,7 +246,7 @@ html(lang='en')
     section#faq.faq-section
       .grid
         .row
-          .col.col-desktop-10.col-desktop-offset-1
+          .col.col-laptop-10.col-laptop-offset-1
             h2 Frequently Asked Questions
 
             .faq-question-wrapper
@@ -278,12 +277,12 @@ html(lang='en')
     section.updates-section
       .grid
         .row
-          .col.col-desktop-5.col-desktop-offset-1.col-tablet-5.col-tablet-offset-1
+          .col.col-tablet-5.col-tablet-offset-1
             h2
               | Follow us
               br
               | for updates
-          .col.col-6.col-mobile-12
+          .col.col-tablet-6.col-12
             .updates-link.twitter
               h4 Twitter
               script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
@@ -306,4 +305,4 @@ html(lang='en')
           span Website:
           span Joanna Falkowska
         .footer-info
-          span © Moral Anxiety Studio 2022
+          span © Moral Anxiety Studio 2023

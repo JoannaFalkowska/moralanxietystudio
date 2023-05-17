@@ -1,3 +1,6 @@
+@function rem-calc($size)
+  @return $size / $font-size * 1rem
+
 html, body
   font-family: $font-family
   font-size: $font-size
@@ -6,32 +9,40 @@ html, body
   color: $body-color
 
 h1
-  font-size: (72rem/20)
+  font-size: rem-calc($h1-scale)
   font-weight: 300
+  font-family: $font-family-sc
 
 h2
-  font-size: (48rem/20)
+  font-size: rem-calc($h2-scale)
   font-weight: 300
   text-align: center
   font-family: $font-family-sc
 
 h3
-  font-size: (36rem/20)
+  font-size: rem-calc($h3-scale)
   font-weight: 300
+  font-family: $font-family-sc
 
 h4
-  font-size: (28rem/20)
+  font-size: rem-calc($h4-scale)
   font-weight: 400
+  font-family: $font-family-sc
 
 h5
-  font-size: (24rem/20)
+  font-size: rem-calc($h5-scale)
   font-weight: 300
+  font-family: $font-family-sc
 
 a
   color: $link-color
+  &:hover, &:focus
+    color: $link-color-hover
+  &:active
+    color: $link-color-active
 
 .warning
-  font-size: (14rem/20)
+  font-size: rem-calc(14px)
 
 ::selection
   background-color: $selection-background

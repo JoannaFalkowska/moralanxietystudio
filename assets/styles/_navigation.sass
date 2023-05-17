@@ -14,16 +14,26 @@
 
   .header-links
     display: flex
+    height: 100%
 
   .header-link
-    +square(45px)
+    +square($header-height)
     +background-icon
+    // border: 1px solid red
+    margin: 0
     display: block
     position: relative
     font-size: 0
+    &:hover, &:focus
+      color: $header-link-color-hover
+    &:active
+      color: $header-link-color-active
+    &:hover, &:focus, &:active
+      background: lighten($header-background, 4%)
+
     svg
       +center-xy
-      +square(60%)
+      +square(30px)
       position: absolute
 
     &:not(.steam)
@@ -56,9 +66,13 @@
     color: $header-link-color
     &:hover, &:focus
       color: $header-link-color-hover
+    &:active
+      color: $header-link-color-active
+    &:hover, &:focus, &:active
+      background: lighten($header-background, 4%)
 
-  .active
-    color: $header-link-color-active
+  .current
+    color: $header-link-color-current
     pointer-events: none
 
   .page-link-dropdown
@@ -73,10 +87,10 @@
       display: none
 
     &:hover, &:focus, &:focus-within
-      background: lighten($header-background, 5%)
+      background: lighten($header-background, 4%)
 
       .page-link-dropdown__list
-        background: lighten($header-background, 5%)
+        background: lighten($header-background, 4%)
         display: block
 
   @media (max-width: $breakpoint-tablet)

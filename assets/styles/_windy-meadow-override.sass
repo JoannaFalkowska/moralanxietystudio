@@ -1,0 +1,210 @@
+strong::after, strong::before
+  content: none
+p + p
+  margin-top: 1.5rem
+
+.introduction-section
+  padding-top: rem-calc(96px)
+  font-size: rem-calc(36px)
+  font-family: $font-family-sc
+  text-align: center
+
+  .logo
+    width: 100%
+    margin-bottom: rem-calc(40px)
+
+  .introduction-text
+    margin: rem-calc(36px) 0 rem-calc(96px)
+
+  .introduction-steam-wrapper
+    margin-bottom: rem-calc(96px)
+
+  .introduction-trailer
+    margin-bottom: rem-calc(96px)
+
+  .image-gallery
+    margin-bottom: 0
+
+.about-section
+  padding-top: 0
+
+.features-section
+  .image-col img
+    max-height: 80%
+
+  ul.features-list
+    list-style-type: circle
+    li
+      display: list-item
+    li + li
+      margin-top: 40px
+  .image-col
+    display: flex
+    align-items: center
+    justify-content: center
+  @media (max-width: $breakpoint-tablet)
+    .image-col
+      margin-top: 40px
+
+.characters-section
+  .characters-header-row
+    margin-bottom: 40px
+
+  .character-row
+    .text-col
+      padding-top: 1.5rem
+      padding-bottom: 2.5rem
+    &.vena
+      background-color: rgba(lighten($vena-background-color, 20%), 0.7)
+      ::selection
+        background-color: $vena-background-color
+      ::-moz-selection
+        background-color: $vena-background-color
+    &.fabel
+      background-color: rgba(lighten($fabel-background-color, 20%), 0.7)
+      ::selection
+        background-color: $fabel-background-color
+      ::-moz-selection
+        background-color: $fabel-background-color
+    &.iudicia
+      background-color: rgba(lighten($iudicia-background-color, 20%), 0.7)
+      img
+        transform: scaleX(-1)
+      ::selection
+        background-color: $iudicia-background-color
+      ::-moz-selection
+        background-color: $iudicia-background-color
+    .image-col
+      display: flex
+      align-items: center
+      @media (max-width: $breakpoint-tablet)
+        order: 2
+      @media (min-width: $breakpoint-laptop + 1)
+        align-items: flex-end
+      img
+        width: 100%
+
+  // .logo-col
+  //   text-align: center
+  // .logo-wrapper
+  //   display: inline-block
+  //   width: 50%
+  //   margin: 0 0 50px
+  // .image-gallery
+  //   margin-top: 50px
+
+
+  // .logo
+  // .steam-note
+  //   text-transform: uppercase
+  //   font-size: 25px
+  //   letter-spacing: 2px
+  //   padding-right: 5%;
+  //   text-align: right
+  //   svg
+  //     display: inline-block
+  //     height: 20px
+  //     margin-left: 2px
+
+  // .introduction-image.main
+  //   margin: 50px 0
+  // .introduction-image
+  //   box-shadow: 0px 0px 20px 3px #{$image-shadow}
+  // .image-gallery
+  //   margin: 60px 0 30px
+  //   display: flex
+  //   justify-content: space-between
+  //   align-items: flex-start
+  //   .introduction-image
+  //     display: block
+  //     width: 30%
+  //   img
+  //     margin: 0
+
+  // @media (min-width: $breakpoint-mobile + 1px)
+  //   .image-gallery .introduction-image
+  //     width: 30%
+  // @media (max-width: $breakpoint-mobile)
+  //   .logo-wrapper
+  //     width: 100%
+  //   .image-gallery
+  //     flex-wrap: wrap
+  //     .introduction-image
+  //       width: 100%
+  //     .introduction-image + .introduction-image
+  //       margin-top: 20%
+
+
+.download-section
+  padding: 100px 0
+
+  .stores-subsection
+    margin-bottom: 100px
+    h2
+      margin-bottom: 30px
+  .demo-subsection
+    margin-bottom: 80px
+
+  .btn
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding: 20px 50px
+
+    text-align: center
+    white-space: nowrap
+    color: $btn-color
+    font-size: (24rem/20)
+    font-weight: 600
+    font-family: $font-family-sc
+
+    background-color: transparent
+    background-size: 100% 200%
+    transition: background-position 0.2s
+
+    .btn-icon
+      height: 1.5rem
+      margin-right: 10px
+      path
+        fill: $body-color
+      &.steam-icon
+        path
+          fill: $body-background
+        circle
+          fill: $body-color
+    &.btn-store
+      flex-direction: column
+      .btn-icon
+        height: 150px
+        width: auto
+        margin: 0 0 50px
+      @media (min-width: $breakpoint-mobile + 1px)
+        &+.btn-store
+          margin-left: 30px
+    &:hover
+      background-position: 0 100%
+      background-image: linear-gradient(to bottom, transparent 50%, rgba(white, 0.20) 50%)
+    &:active
+      background-image: linear-gradient(to bottom, transparent 50%, rgba(white, 0.40) 50%)
+    @media (max-width: $breakpoint-tablet)
+      line-height: 1
+      padding: 15px 20px
+
+
+.faq-section
+  // background: #d1eefc
+  font-size: 1rem
+  h2
+    margin-bottom: 0
+  .faq-question
+    font-weight: bold
+  .faq-question-wrapper
+    margin-top: 40px
+
+.updates-section
+  @media (max-width: $breakpoint-tablet)
+    h2
+      text-align: center
+
+.updates-section, footer
+  // background: #def3fc

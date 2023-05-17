@@ -65,24 +65,25 @@ section
     margin-top: 30px
 
 .features-section
-  background: linear-gradient(black 0%, #121521 3%, #121521 97%, black 100%)
   margin: -50px 0
   padding: 100px 0
   .features-header-row
     text-align: center
     margin-bottom: 40px
-  .text-col
-    padding: 20px 0
   .feature-header
     width: 100%
   .feature-row + .feature-row
     margin-top: 60px
 
-  @media (min-width: $breakpoint-mobile + 1)
+  @media (min-width: $breakpoint-tablet + 1)
     .text-col
       text-align: right
     .image-col + .text-col
       text-align: left
+
+  @media (max-width: $breakpoint-tablet)
+    .image-col
+      order: 2
 
   @media (max-width: $breakpoint-mobile)
     .feature-row + .feature-row
@@ -90,8 +91,6 @@ section
     .feature-header
       width: 100%
       text-align: center
-    .image-col
-      order: 2
 
 
 .download-section
