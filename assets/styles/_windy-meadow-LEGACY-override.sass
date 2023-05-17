@@ -109,7 +109,7 @@ strong::after, strong::before
     margin: 50px 0
   .introduction-image
     box-shadow: 0px 0px 20px 3px #{$image-shadow}
-  .image-gallery
+  .introduction-gallery
     margin: 60px 0 30px
     display: flex
     justify-content: space-between
@@ -121,12 +121,12 @@ strong::after, strong::before
       margin: 0
 
   @media (min-width: $breakpoint-mobile + 1px)
-    .image-gallery .introduction-image
+    .introduction-gallery .introduction-image
       width: 30%
   @media (max-width: $breakpoint-mobile)
     .logo-wrapper
       width: 100%
-    .image-gallery
+    .introduction-gallery
       flex-wrap: wrap
       .introduction-image
         width: 100%

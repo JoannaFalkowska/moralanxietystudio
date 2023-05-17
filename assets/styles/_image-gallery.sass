@@ -1,0 +1,102 @@
+.image-gallery
+  img
+    margin: 0
+
+  // mobile fallback
+  @media (max-width: $breakpoint-tablet)
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: flex-start
+    .item
+      display: block
+      width: 100%
+    .item + .item
+      margin-top: 20px
+    .item:not([tabindex])
+      display: none
+
+  // the main gallery functionality
+  @media (min-width: $breakpoint-tablet + 1px)
+    $gallery-transition-time: .4s
+
+    display: grid
+    width: auto
+    max-width: 100%
+    margin-bottom: 90px
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: auto 2fr auto
+    grid-template-areas: "item1 item2 item3" "focused focused focused" "item4 item5 item6"
+    gap: 1rem
+
+    .item
+      cursor: pointer
+    .item:not([tabindex])
+      pointer-events: none
+    .item.main, .item:focus
+      grid-area: focused
+      cursor: unset
+    &:not(:focus-within) .item.main
+      opacity: 1
+      transition: none
+    &:focus-within .item.main
+      opacity: 0
+      transition: opacity $gallery-transition-time
+    .item:focus
+      opacity: 1
+      transition: opacity $gallery-transition-time
+
+    // "miniature backgrounds"
+    .item[tabindex]
+      filter: grayscale(90%) brightness(40%)
+    .item:not([tabindex])
+      filter: grayscale(20%) brightness(80%)
+    .item:focus
+      filter: none
+    .item1
+      grid-area: item1
+    .item2
+      grid-area: item2
+    .item3
+      grid-area: item3
+    .item4
+      grid-area: item4
+    .item5
+      grid-area: item5
+    .item6
+      grid-area: item6
+
+    // shadows on the borders
+    $shadow-small: 0px 0px 15px 2px #{rgba($image-shadow, 0.8)}
+    $shadow-large: 0px 0px 20px 3px #{rgba($image-shadow, 0.8)}
+
+    .item
+      box-shadow: none
+    .item:not([tabindex])
+      pointer-events: none
+      box-shadow: none
+      & + .item:not(:focus)
+        box-shadow: $shadow-small
+      & + .item:focus
+        box-shadow: $shadow-large
+    .item.main
+      box-shadow: $shadow-large
+
+    // X "close button"
+    position: relative
+    &::after
+      +pseudoelement
+      +square(2rem)
+      opacity: 0
+      left: auto
+      right: -10px;
+      top: 20%
+      cursor: pointer
+      content: "\2716"
+      background-color: $image-shadow
+      line-height: 2.1rem
+      text-align: center
+      vertical-align: middle
+      transition: opacity $gallery-transition-time
+    &:focus-within::after
+      opacity: 0.8
